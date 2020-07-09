@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Post Details {% endblock %}
+
+
+{% block name %} <h2>By {{ author.name }} </h2>{% endblock %}
+
+{% block posttitle %}
+{% for post in item %}
+{{ post.date_at }} Update Time : {{ post.date_upd }}</br>
+{{ post.title }}<hr>
+{% endfor %}{% endblock %}
+
+
+{% block body %}
+{% for post in item %}
+<u>{{ post.title }}</u></br></br>{{ post.date_upd }}</br></br></br>
+{{ post.post }}</br></br><hr>
+{% endfor %}{% endblock %}
+
+{% block img %}<img class="d-flex mr-3 rounded-circle" height="210" width="210" src="{{ author.img.url }}" alt="">{% endblock %}
